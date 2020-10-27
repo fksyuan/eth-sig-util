@@ -1,4 +1,4 @@
-import * as ethUtil from 'ethereumjs-util';
+import * as ethUtil from '@fksyuan/ethereumjs-util';
 import * as ethAbi from 'ethereumjs-abi';
 import * as nacl from 'tweetnacl';
 import * as naclUtil from 'tweetnacl-util';

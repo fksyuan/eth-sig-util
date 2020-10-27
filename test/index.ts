@@ -1,5 +1,5 @@
 import * as test from 'tape';
-import * as ethUtil from 'ethereumjs-util';
+import * as ethUtil from '@fksyuan/ethereumjs-util';
 import * as sigUtil from '..';
 
 test('normalize address lower cases', function (t) {
