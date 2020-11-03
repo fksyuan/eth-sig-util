@@ -293,7 +293,15 @@ function normalize (input: number | string): string {
     throw new Error(msg);
   }
 
-  return ethUtil.addHexPrefix(input.toLowerCase());
+  if (!ethUtil.isBech32Address(input)) {
+    // var msg = 'eth-sig-util.normalize() requires bech32 input.'
+    // msg += ' received ' + (typeof input) + ': ' + input
+    // throw new Error(msg)
+    return ethUtil.addHexPrefix(input.toLowerCase());
+  }
+
+  return input;
+  // return ethUtil.addHexPrefix(input.toLowerCase());
 }
 
 function personalSign<T extends MessageTypes> (privateKey: Buffer, msgParams: MsgParams<TypedData | TypedMessage<T>>): string {
